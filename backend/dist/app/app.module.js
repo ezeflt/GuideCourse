@@ -15,16 +15,7 @@ const mongoose_1 = require("@nestjs/mongoose");
 const config_1 = require("@nestjs/config");
 const guide_module_1 = require("../guide/guide.module");
 const course_module_1 = require("../course/course.module");
-const cors = require("cors");
 let AppModule = class AppModule {
-    configure(consumer) {
-        consumer
-            .apply(cors({
-            origin: '*',
-            credentials: true,
-        }))
-            .forRoutes('*');
-    }
 };
 exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([

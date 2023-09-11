@@ -43,6 +43,7 @@ class AuthentificationService {
             method : 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email : email, username : username, password : password }),
+            credentials: 'include',
         })
 
         // convert the route response to json format
@@ -67,6 +68,7 @@ class AuthentificationService {
             method : 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email : email, password : password }),
+            credentials: 'include',
         })
 
         // convert the route response to json format
