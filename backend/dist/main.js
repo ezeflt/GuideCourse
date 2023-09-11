@@ -10,7 +10,6 @@ async function bootstrap() {
     app.enableCors({
         origin: ['https://guide-course-frontend.vercel.app'],
         methods: ['GET', 'POST'],
-        credentials: true,
     });
     app.useGlobalPipes(new common_1.ValidationPipe());
     await app.listen(process.env.PORT || 3000);
