@@ -5,7 +5,7 @@
 # Présentation :
 Guides et Cours en ligne est une applications web qui permet de de visiter des guides (tuto) pour se reperer et par la suite vous avez la possibiltié de reserver des formations.
 
-## lien du site : https://fr
+## lien du site : https://guide-course-frontend.vercel.app/
 
 # Technologie utilisée
 
@@ -25,6 +25,9 @@ Backend :
 - Class-validator (librarie)
 - Uid2 (librarie)
 - Bcrypt (librarie)
+
+Database :
+- MongoDB
 
 ## lancer l'applications en local 
 

@@ -30,7 +30,7 @@ class GuideQuery {
 
     constructor()
     {
-        this.routeUrl = 'http://localhost:3000';
+        this.routeUrl = 'https://backend-guide-course-n87gg5ok6-ezeflt.vercel.app';
     }
 
     /**
