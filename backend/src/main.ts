@@ -2,17 +2,30 @@ import { NestFactory } from "@nestjs/core";
 import { AppModule } from "./app/app.module";
 import { ValidationPipe } from "@nestjs/common";
 import { ConfigService } from '@nestjs/config';
+import { NestExpressApplication } from "@nestjs/platform-express";
+import { join } from "path";
 
 async function bootstrap() {
+  const app = await NestFactory.create<NestExpressApplication>(
+      AppModule,
+  );
 
-  const app = await NestFactory.create(AppModule, { cors: true });
-  app.enableCors({
-    origin: 'https://guide-course-frontend.vercel.app',
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    allowedHeaders: 'Content-Type, Accept',
-    credentials: true,
+  app.useStaticAssets(join(__dirname, '..', 'public'));
+  app.setBaseViewsDir(join(__dirname, '..', 'views'));
+  app.setViewEngine('hbs');
+
+  app.use((req, res, next) => {
+      res.header('Access-Control-Allow-Origin', '*');
+      res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+      res.header('Access-Control-Allow-Headers', 'Content-Type, Accept');
+      next();
   });
-  app.useGlobalPipes(new ValidationPipe());
+
+  app.enableCors({
+      allowedHeaders:"*",
+      origin: "*"
+  });
+
   await app.listen(3000);
 }
 bootstrap();
