@@ -5,10 +5,12 @@ import { ConfigService } from '@nestjs/config';
 
 async function bootstrap() {
 
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppModule, { cors: true });
   const configService = app.get(ConfigService);
   app.enableCors({
-    origin: ['https://guide-course-frontend.vercel.app/']
+    origin: ['https://guide-course-frontend.vercel.app'],
+    methods: ['GET', 'POST'],
+    credentials: true,
   });
   app.useGlobalPipes(new ValidationPipe());
   await app.listen(process.env.PORT ||3000);
