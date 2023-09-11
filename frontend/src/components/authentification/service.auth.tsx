@@ -23,7 +23,7 @@ class AuthentificationService {
 
     constructor()
     {
-        this.routeUrl = 'https://backend-guide-course-n87gg5ok6-ezeflt.vercel.app';
+        this.routeUrl = 'https://backend-guide-course.vercel.app';
     }
 
     /**
