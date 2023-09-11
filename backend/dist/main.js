@@ -8,7 +8,7 @@ async function bootstrap() {
     const app = await core_1.NestFactory.create(app_module_1.AppModule);
     const configService = app.get(config_1.ConfigService);
     app.enableCors({
-        origin: configService.get('https://backend-guide-course.vercel.app')
+        origin: configService.get('https://guide-course-frontend.vercel.app/')
     });
     app.useGlobalPipes(new common_1.ValidationPipe());
     await app.listen(process.env.PORT || 3000);
