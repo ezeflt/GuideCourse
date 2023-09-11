@@ -1,17 +1,14 @@
 import { NestFactory } from "@nestjs/core";
 import { AppModule } from "./app/app.module";
 import { ValidationPipe } from "@nestjs/common";
+import { ConfigService } from '@nestjs/config';
 
 async function bootstrap() {
+
   const app = await NestFactory.create(AppModule);
+  const configService = app.get(ConfigService);
   app.enableCors({
-    origin: [
-      'https://guide-course-frontend.vercel.app',
-      'http://localhost:3000',
-      'http://localhost:3001'
-    ],
-    methods: ["GET", "POST","PUT"],
-    credentials: true,
+    origin: configService.get('https://backend-guide-course.vercel.app')
   });
   app.useGlobalPipes(new ValidationPipe());
   await app.listen(process.env.PORT ||3000);
