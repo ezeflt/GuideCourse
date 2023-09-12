@@ -37,27 +37,32 @@ Database :
 
 ### Tapez ces lignes de commande dans votre terminal :
 
-1. clonez le projet sur votre ordinateur
+1. Clonez le projet sur votre ordinateur
 `````
-git clone https://github.com/ezeflt/GuideCourse.git
+git clone https://github.com/ezeflt/GuideCourse.git .
 `````
 <br>
 
-2. dirigez vous dans le dossier backend et créer un fichier .env à la racine
+2. Dirigez vous dans le dossier backend et créer un fichier .env à la racine
 ajoutez dans ce fichier .env la clé de la base de donnée
 <br>
 
-3. démarrez le frontend et le backend en local
+3. Ouvrez 2 terminal, un pour le front et un pour le back
+
+<br>
+
+4. Dans votre terminal back démarrez le backend en local avec ces commandes
 `````
 cd backend
 yarn install
 yarn run start:dev
-cd ..
+`````
+5. Dans votre terminal front démarrez le frontend en local avec ces commandes
+`````
 cd frontend
 yarn install
 yarn start
 `````
-
 
 # Développeur 
 
